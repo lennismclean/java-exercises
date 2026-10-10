@@ -15,20 +15,33 @@ public class _9_ScannerExercises {
         // TODO: 1 - Create a Scanner object to read from System.in
         // Hint: Scanner scanner = new Scanner(System.in);
 
+        Scanner scanner = new Scanner(System.in);
+
 
         // TODO: 2 - Prompt the user for their name and read it using nextLine()
         // Print "Enter your name: " then read the input into a String variable.
         // Hint: Use System.out.print() (not println) for the prompt so the cursor
         //       stays on the same line.
+            try (Scanner scanner1 = new Scanner(System.in)) {
+                System.out.println("Enter your name: ");
+                String name = scanner.nextLine();
+                System.out.println("Hello, " + name + "!");
+            }
 
 
         // TODO: 3 - Prompt the user for their age and read it using nextInt()
         // Print "Enter your age: " then read the input into an int variable.
         // Note: After nextInt(), the newline character remains in the buffer.
 
+            System.out.println("Enter your age: ");
+            String ageInput = scanner.nextLine();
+            int age = Integer.parseInt(ageInput);
 
         // TODO: 4 - Print a greeting using the name and age
         // Example output: "Hello, Alice! You are 25 years old."
+
+        System.out.println("Hello, " + "Alice" + "!You are" + "25" + " years old.");
+        System.out.println();
 
 
         // TODO: 5 - Prompt the user for two numbers, read them, and print their sum
@@ -36,9 +49,19 @@ public class _9_ScannerExercises {
         // Print "Enter second number: ", read it.
         // Print "Sum: " followed by the result.
 
+        System.out.println("Enter first number: " );
+        double a = scanner.nextDouble();
+
+        System.out.println("Enter second number: ");
+        double b = scanner.nextDouble();
+
+        System.out.println("Sum: " + (a + b));
+
 
         // TODO: 6 - Close the scanner to free resources
         // Hint: scanner.close();
+
+        scanner.close();
 
     }
 }
