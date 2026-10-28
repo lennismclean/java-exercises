@@ -2,7 +2,7 @@ package com.amigoscode._2_developers._1_loops;
 
 /**
  * Loop Exercises
- *
+ * <p>
  * Practice nested loops, break/continue statements, labeled breaks,
  * accumulators, pattern printing, reverse iteration, and controlled infinite loops.
  */
@@ -11,9 +11,9 @@ public class LoopExercises {
     /**
      * Prints a multiplication table from 1 to n using nested loops.
      * Example for n=3:
-     *   1  2  3
-     *   2  4  6
-     *   3  6  9
+     * 1  2  3
+     * 2  4  6
+     * 3  6  9
      *
      * @param n the size of the multiplication table
      */
@@ -22,6 +22,14 @@ public class LoopExercises {
         //  Outer loop iterates rows 1..n, inner loop iterates columns 1..n.
         //  Print each product followed by a tab, and a newline after each row.
 
+        int y = 3;
+
+        for (int i = 1; i <= 3; i++) {
+            for (int j = 1; j <= 3; j++) {
+                System.out.println(i * j);
+            }
+        }
+        System.out.println();
     }
 
     /**
@@ -36,8 +44,19 @@ public class LoopExercises {
         // TODO: 2 - Loop from 1 to n. Use 'continue' to skip multiples of 3.
         //  Use 'break' to stop if sum exceeds 100. Add the current number to sum otherwise.
 
+
+        for (int i =1; i <= n; i++) {
+            if (i % 3 == 0) {
+                continue;
+            }
+            sum += i;
+            if (sum > 100) {
+                break;
+            }
+        }
         return sum;
     }
+
 
     /**
      * Searches a 2D array for a target value. Returns a string "Found at [row][col]"
@@ -54,6 +73,15 @@ public class LoopExercises {
         //  When the target is found, set result to "Found at [row][col]" and
         //  use 'break search;' to exit both loops.
 
+        for (int row = 0; row < matrix.length; row++) {
+            for (int col = 0; col < matrix[row].length; col++) {
+                if (matrix[row][col] == target) {
+                    result = "Found at [" + row + "] [" + col +"]";
+                    break;
+
+                }
+            }
+        }
         return result;
     }
 
@@ -69,16 +97,19 @@ public class LoopExercises {
         // TODO: 4 - Use a for loop from 1 to n (inclusive), multiplying accumulator
         //  by the loop variable each iteration. Return the result.
 
+        for (int i = 1; i <= n; i++) {
+            accumulator *= i;
+        }
         return accumulator;
     }
 
     /**
      * Prints a pyramid pattern of stars with the given number of rows.
      * Example for rows=4:
-     *       *
-     *      ***
-     *     *****
-     *    *******
+     * *
+     * ***
+     * *****
+     * *******
      *
      * @param rows the number of rows in the pyramid
      */
@@ -86,6 +117,17 @@ public class LoopExercises {
         // TODO: 5 - Use nested loops to print a centered pyramid of stars.
         //  For each row i (0-based), print (rows - i - 1) spaces followed by (2 * i + 1) stars.
         //  Print a newline after each row.
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < rows - i - 1; j++) {
+                System.out.println(" ");
+            }
+            for (int j = 0; j < 2 * i + 1; j++) {
+                System.out.println("*");
+            }
+            System.out.println();
+        }
+
 
     }
 
@@ -101,8 +143,16 @@ public class LoopExercises {
         // TODO: 6 - Use a for loop starting from the last index down to 0.
         //  Append each element to sb. Add ", " between elements but not after the last one.
 
+
+        for (int i = arr.length - 1; i >= 0; i--) {
+            sb.append(arr[i]);
+            if (i > 0) {
+                sb.append(", ");
+            }
+        }
         return sb.toString();
     }
+
 
     /**
      * Simulates a simple number guessing scenario. Keeps generating random numbers
@@ -119,6 +169,13 @@ public class LoopExercises {
         //  Each iteration: increment attempts, generate a random int between 1 and 100,
         //  and break if it matches the target.
 
+        while (true) {
+            attempts++;
+            int guess = random.nextInt(100) + 1;
+            if (guess == target) {
+                break;
+            }
+        }
         return attempts;
     }
 
@@ -152,3 +209,4 @@ public class LoopExercises {
         System.out.println("Attempts to find 42: " + countUntilMatch(42));
     }
 }
+
