@@ -1,10 +1,25 @@
 package com.amigoscode._2_developers._3_packages;
 
+import java.util.List;
+import java.util.ArrayList;
+import java.time.LocalDate;
+import static java.lang.Math.PI;
+
+
 // TODO: 1 - Import java.util.List and java.util.ArrayList, then create a List<String>
 //  in the useListFromUtil() method below.
 
+public static void useListFromUtil() {
+
+    List<String> names = new ArrayList<>();
+}
 
 // TODO: 2 - Import java.time.LocalDate, then use it in the printToday() method below.
+
+
+public static void printToday() {
+
+}
 
 
 /**
@@ -22,6 +37,10 @@ public class PackageDemo {
         // TODO: 1 (continued) - Create a List<String> using ArrayList, add three fruits,
         //  and print the list. Make sure you have the import statements at the top.
 
+        List<String> names = new ArrayList<>();
+        names.add("Strawberry");
+        names.add("Banana");
+        names.add("Apple");
     }
 
     /**
@@ -31,6 +50,8 @@ public class PackageDemo {
         // TODO: 2 (continued) - Use LocalDate.now() to get today's date and print it.
         //  Make sure you have the import statement at the top.
 
+        LocalDate today = LocalDate.now();
+        System.out.println("Today is " + today);
     }
 
     /**
@@ -42,10 +63,17 @@ public class PackageDemo {
         //  class name (no import). Put two entries (e.g., "Alice"->90, "Bob"->85) and print it.
         //  Example: java.util.HashMap<String, Integer> map = new java.util.HashMap<>();
 
+        java.util.HashMap<String, Integer> map = new java.util.HashMap<>();
+        map.put("Alice", 90);
+        map.put("Bob", 85);
     }
 
     // TODO: 4 - Add a static import for java.lang.Math.PI at the top of this file,
     //  then complete the method below to use PI directly (without Math.PI).
+
+    public static double circumference(double radius) {
+        return PI * radius * radius;
+    }
 
     /**
      * Returns the area of a circle with the given radius.
@@ -57,7 +85,8 @@ public class PackageDemo {
     public static double circleArea(double radius) {
         // TODO: 4 (continued) - Return PI * radius * radius using the statically imported PI.
         //  You need to add: import static java.lang.Math.PI; at the top of this file.
-        return 0;
+
+        return PI * radius * radius;
     }
 
     /**
@@ -70,6 +99,8 @@ public class PackageDemo {
         //  Call one of its static methods and print the result.
         //  Example: String result = com.amigoscode._2_developers._2_conditionals.IfStatements.evenOrOdd(4);
 
+        String result = com.amigoscode._2_developers._2_conditionals.IfStatements.evenOrOdd(4);
+        System.out.println(result);
     }
 
     public static void main(String[] args) {
