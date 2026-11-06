@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.time.LocalDate;
 import static java.lang.Math.PI;
 
+public class PackageDemo {
+
 
 // TODO: 1 - Import java.util.List and java.util.ArrayList, then create a List<String>
 //  in the useListFromUtil() method below.
@@ -19,8 +21,8 @@ public static void useListFromUtil() {
 
 public static void printToday() {
 
+    System.out.println(LocalDate.now());
 }
-
 
 /**
  * Package and Import Exercises
@@ -28,7 +30,8 @@ public static void printToday() {
  * Practice importing classes from java.util and java.time, using fully qualified
  * class names, importing static members, and referencing classes from other packages.
  */
-public class PackageDemo {
+public class packagedemo {
+
 
     /**
      * Creates a List of three fruit names and prints it.
@@ -119,4 +122,5 @@ public class PackageDemo {
         System.out.println("\n=== Class From Another Package ===");
         useClassFromAnotherPackage();
     }
+}
 }
